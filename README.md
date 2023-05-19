@@ -73,7 +73,7 @@
   <tr>
     <td>정찬우</td>
     <td>조승희</td>
-    <td>유지</td>
+    <td>유지민</td>
   </tr>
   <tr>
     <td> <img width="157" alt="image" src="https://github.com/SOPKATHON-2/FrontEnd/assets/91375979/b1b988ff-0044-4126-be40-36c9c63f4303">  </td>
