@@ -5,22 +5,25 @@ import mainLogo from '../assets/images/mainLogo.png'
 import MainBtn from '../components/common/MainBtn';
 import Modal from '../components/modal/Modal';
 
+import { IMG_DATA } from '../assets/images';
+
 
 function Campfire() {
 
   const [isModal,setModal] = useState(false);
+  const num = 10;
 
   return (
     <MobileLayout>
       <Header>
-        <span>1</span>/10
+        <span>{num}</span>/10
       </Header>
       <Title>
       담배 메이트 초대해서<br/>불을 더 활활 지펴보자고
       </Title>
 
       <ImgWrapper>
-        <img src={mainLogo} alt="걍 png"/>
+        <img src={IMG_DATA[num-1]} alt="걍 png"/>
       </ImgWrapper>
 
       <MainBtn onClick={()=>{setModal(true)}}>맞담할 사람 구함 </MainBtn>
@@ -78,11 +81,11 @@ const Title = styled.h1`
 `
 
 const ImgWrapper = styled.section`
-  margin: 11.3rem 0rem;
+  margin: 2.8rem 0rem;
 
 
   & > img {
-    width: 9rem;
-    height: 9rem;
+    width: 26rem;
+    height: 26rem;
   }
 `
