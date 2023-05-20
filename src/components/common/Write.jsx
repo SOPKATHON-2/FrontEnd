@@ -13,6 +13,7 @@ function Write() {
   return (
     <WriteWrapper>
       <Title>고민을 말해봐</Title>
+      <Subtitle>아니, 그래서 뭔데?</Subtitle>
       <FireWrapper>
         <img src={fire} alt="불" />
       </FireWrapper>
@@ -22,7 +23,7 @@ function Write() {
           rows="5"
           cols="33"
           placeholder="종이에 너를 우울하게 하는 고민을 적어서 담배를 말아보자!"
-        ></textarea>
+        />
       </LetterWrapper>
       <MainBtn onClick={handleNavigate}>담배 말기</MainBtn>
     </WriteWrapper>
@@ -36,9 +37,8 @@ const WriteWrapper = styled.div`
   text-align: center;
 `;
 
-const Title = styled.h1`
+const Title = styled.span`
   margin-top: 6rem;
-  margin-bottom: 5rem;
 
   text-align: center;
 
@@ -48,6 +48,16 @@ const Title = styled.h1`
   line-height: 3.6rem;
 `;
 
+const Subtitle = styled.span`
+  margin-bottom: 1.4rem;
+
+  text-align: center;
+
+  font-family: "SangSangShinb7";
+  font-weight: 400;
+  font-size: 3.8rem;
+  line-height: 3.6rem;
+`;
 const FireWrapper = styled.div`
   img {
     width: 8rem;
@@ -70,7 +80,17 @@ const LetterWrapper = styled.div`
     height: 16.8rem;
     line-height: 2.8rem;
 
+    font-family: "SangSangShinb7";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+    color: #4d4d49;
+
     background-color: transparent;
     border: none;
+  }
+  textarea::placeholder {
+    color: #969696;
   }
 `;
