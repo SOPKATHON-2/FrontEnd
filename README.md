@@ -71,7 +71,7 @@
     </tr>
   	<tr align="center">
         <td>
-            룸생성 api <br/>
+            룸생성 <br/>
       </td>
        <td>
             고민내용 전송 <br/>
