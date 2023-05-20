@@ -32,7 +32,7 @@
 <div ><strong> 고민갯수 , 공유하기기능  </strong> 해당방의 고민갯수 get api , 공유하기 기능  <br/></div>
 
 
-<h2> 🐵 웨비들 </h2>
+<h2> 🐵 웨비들 역할분담 </h2>
 
 <table align="center">
     <tr align="center">
