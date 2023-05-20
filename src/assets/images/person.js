@@ -1,8 +1,8 @@
 
 export const PEOPLE_DATA = [
     {
-        x: 1.3,
-        y: 180
+        x: 4,
+        y: 17
     },
     {
         x: 7,
