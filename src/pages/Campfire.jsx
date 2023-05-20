@@ -6,15 +6,21 @@ import MainBtn from '../components/common/MainBtn';
 import Modal from '../components/modal/Modal';
 
 import { IMG_DATA } from '../assets/images';
+import { PEOPLE_DATA } from '../assets/images/person';
+import ImgPerson from '../assets/images/img_person.png';
 
 
 function Campfire() {
 
   const [isModal,setModal] = useState(false);
-  const num = 10;
+  const num = 9;
+
+  const PEOPLE_NUM_DATA = PEOPLE_DATA.slice(0,num);
 
   return (
     <MobileLayout>
+      {PEOPLE_NUM_DATA.map((el)=><PersonImage key={el.x} x={el.x} y={el.y}><img src={ImgPerson} alt="사람이미지"/></PersonImage>)}
+
       <Header>
         <span>{num}</span>/10
       </Header>
@@ -88,4 +94,11 @@ const ImgWrapper = styled.section`
     width: 26rem;
     height: 26rem;
   }
+`
+
+const PersonImage = styled.div`
+  position: absolute;
+
+  left: ${props => props.x}rem;
+  top: ${props => props.y}rem;
 `
