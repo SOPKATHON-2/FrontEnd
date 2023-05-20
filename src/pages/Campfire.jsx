@@ -1,11 +1,10 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import MobileLayout from "../components/common/MobileLayout";
 import { styled } from "styled-components";
 
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import React, { useState } from "react";
-
 
 import mainLogo from "../assets/images/mainLogo.png";
 import MainBtn from "../components/common/MainBtn";
@@ -15,6 +14,8 @@ import { IMG_DATA } from "../assets/images";
 
 function Campfire() {
   const { roomId } = useParams();
+
+  const navigator = useNavigate();
 
   const [letterCount, setLetterCount] = useState();
   const getMessageCount = async () => {
@@ -49,13 +50,23 @@ function Campfire() {
         <img src={IMG_DATA[num - 1]} alt="걍 png" />
       </ImgWrapper>
 
-      <MainBtn
-        onClick={() => {
-          setModal(true);
-        }}
-      >
-        맞담할 사람 구함{" "}
-      </MainBtn>
+      {letterCount === 10 ? (
+        <MainBtn
+          onClick={() => {
+            navigator(`/ending`);
+          }}
+        >
+          불지르기{" "}
+        </MainBtn>
+      ) : (
+        <MainBtn
+          onClick={() => {
+            setModal(true);
+          }}
+        >
+          맞담할 사람 구함{" "}
+        </MainBtn>
+      )}
 
       {isModal ? <Modal setModal={setModal} /> : ``}
     </MobileLayout>

@@ -159,6 +159,7 @@ button {
 body {
   display: flex;
   justify-content: center;
+  background-color: #F8F7F7;
 }
 
 `;
