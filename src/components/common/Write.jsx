@@ -1,10 +1,15 @@
 import React from "react";
 import { styled } from "styled-components";
+import { useNavigate } from "react-router";
 import fire from "../../assets/images/fire.png";
 import letter from "../../assets/images/letter.png";
 import MainBtn from "../common/MainBtn";
 
 function Write() {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate(`/9/smoke`);
+  };
   return (
     <WriteWrapper>
       <Title>고민을 말해봐</Title>
@@ -14,14 +19,12 @@ function Write() {
       <LetterWrapper>
         <img src={letter} alt="편지지" />
         <textarea
-          id="story"
-          name="story"
           rows="5"
           cols="33"
           placeholder="종이에 너를 우울하게 하는 고민을 적어서 담배를 말아보자!"
         ></textarea>
       </LetterWrapper>
-      <MainBtn>담배 말기</MainBtn>
+      <MainBtn onClick={handleNavigate}>담배 말기</MainBtn>
     </WriteWrapper>
   );
 }

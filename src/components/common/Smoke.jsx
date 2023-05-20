@@ -1,10 +1,15 @@
 import React from "react";
 import { styled } from "styled-components";
+import { useNavigate } from "react-router";
 import fire from "../../assets/images/fire.png";
 import smoking from "../../assets/images/smoking.gif";
 import MainBtn from "../common/MainBtn";
 
 function Smoke() {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate(`/9/throw`);
+  };
   return (
     <SmokeWrapper>
       <Title>같이 피실?</Title>
@@ -14,7 +19,7 @@ function Smoke() {
       <StyledImg>
         <img src={smoking} alt="불" />
       </StyledImg>
-      <MainBtn>ㄱㄱ</MainBtn>
+      <MainBtn onClick={handleNavigate}>ㄱㄱ</MainBtn>
     </SmokeWrapper>
   );
 }
