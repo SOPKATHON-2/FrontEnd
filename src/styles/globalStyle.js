@@ -138,7 +138,6 @@ const reset = css`
 export const GlobalStyle = createGlobalStyle`
     ${reset}
 
-  
     @font-face {
     font-family: 'SangSangShinb7';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.1/SangSangShinb7.woff') format('woff');
