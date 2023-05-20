@@ -17,7 +17,7 @@
 
 <h2> 모바일 담타의 핵심 기능 </h2>
 
-<h3> 1️⃣ 함께 모바일 담타를 즐길 수 있는 Url 생성 및  </h3>
+<h3> 1️⃣ 함께 모바일 담타를 즐길 수 있는 Url 생성 및 엔딩  </h3>
 
 <img width="131" alt="image" src="https://github.com/SOPKATHON-2/FrontEnd/assets/91375979/266fb7d6-1fbb-4750-b9e1-affb32822b0f">
 <img width="153" alt="image" src="https://github.com/SOPKATHON-2/FrontEnd/assets/91375979/9b6fe10e-f9c4-44d3-8da6-58be147ea86f">
