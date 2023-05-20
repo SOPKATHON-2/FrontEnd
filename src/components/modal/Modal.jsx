@@ -1,5 +1,11 @@
 import React, {useEffect} from 'react'
 import { styled } from 'styled-components';
+import ImgModal from '../../assets/images/img_modal.png';
+import ImgCopylink from '../../assets/images/img_copylink.png';
+import ImgKakao from '../../assets/images/img_kakao.png';
+import ImgClose from '../../assets/images/img_close.png';
+
+
 
 function Modal(props) {
     const {setModal} = props;
@@ -27,12 +33,19 @@ function Modal(props) {
     return (
         <Wrapper>
             <ModalBox>
-                <ModalClose onClick={()=>{setModal(false)}}>X</ModalClose>
-                <ModalHeader>맞담할 사람 구함</ModalHeader>
-                <ModalBtnWrapper>
-                    <ModalBtn> 링크 복사하기 </ModalBtn>
-                    <ModalBtn onClick={handleKakaoShare}> 카카오톡에 공유 </ModalBtn>
-                </ModalBtnWrapper>
+                <img src={ImgModal}/>
+                <div>
+                    <img src={ImgClose} onClick={()=>{setModal(false)}}/>
+                    <ModalHeader>맞담할 사람 구함</ModalHeader>
+                    <ModalBtnWrapper>
+                        <div>
+                            <img src={ImgCopylink}/>
+                            <img src={ImgKakao} onClick={handleKakaoShare}/>
+                        </div>
+                        <ModalBtn>링크 복사하기 </ModalBtn>
+                        <ModalBtn> 카카오톡에 공유 </ModalBtn>
+                    </ModalBtnWrapper>
+                </div>
             </ModalBox>
         </Wrapper>
     )
@@ -58,12 +71,17 @@ const ModalBox = styled.article`
 
     width:26rem;
     height:20.4rem;
-    padding:2rem;
-    
-    background-color: white;
-`
 
-const ModalClose = styled.button`
+    & > img {
+        position: absolute;
+        z-index: -1;
+    }
+
+    & > div {
+        padding: 2rem;
+    }
+
+    & > div > img {
     position: absolute;
     top: 0;
     right: 0;
@@ -71,7 +89,12 @@ const ModalClose = styled.button`
 
     width: 2.4rem;
     height: 2.4rem;
+    background-color: #F8F7F7;
+    }
+    
+    
 `
+
 
 const ModalHeader = styled.header`
     font-family: 'SangSangShinb7';
@@ -81,14 +104,22 @@ const ModalHeader = styled.header`
     line-height: 2.6rem;
     /* identical to box height, or 130% */
 
+    color: #4D4D49;
+
 `
 
 const ModalBtnWrapper = styled.section`
     display:flex;
     flex-direction:column;
-    gap:1.5rem;
+
+    position: relative;
 
     margin-top: 2.2rem;
+
+    & > div {
+        position: fixed;
+    }
+    
 
 `
 
@@ -98,10 +129,13 @@ const ModalBtn = styled.button`
 
     font-family: 'SangSangShinb7';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 3rem;
     line-height: 3rem;
     /* identical to box height, or 125% */
     text-align: center;
 
+    background-color: #F8F7F7;
+
+    color: #4D4D49;
 `
