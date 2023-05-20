@@ -37,5 +37,8 @@ const BtnWrapper = styled.div`
     font-family: "SangSangShinb7";
     font-size: 3.6rem;
     font-weight: 600;
+
+    width: 100%;
+    text-align: center;
   }
 `;
