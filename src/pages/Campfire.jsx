@@ -63,7 +63,7 @@ function Campfire() {
       {letterCount === 10 ? (
         <MainBtn
           onClick={() => {
-            navigator(`/ending`);
+            navigator(`/fired`);
           }}
         >
           불지르기{" "}
