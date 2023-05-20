@@ -2,11 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 
 function MobileLayout({ children }) {
-  return (
-    <MobileLayoutWrapper>
-      {children}
-    </MobileLayoutWrapper>
-  );
+  return <MobileLayoutWrapper>{children}</MobileLayoutWrapper>;
 }
 
 export default MobileLayout;
