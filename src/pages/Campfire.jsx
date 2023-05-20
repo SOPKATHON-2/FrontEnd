@@ -1,36 +1,54 @@
-import React from 'react'
-import MobileLayout from '../components/common/MobileLayout';
-import { styled } from 'styled-components';
-import mainLogo from '../assets/images/mainLogo.png'
-
+import React, { useEffect, useState } from "react";
+import MobileLayout from "../components/common/MobileLayout";
+import { styled } from "styled-components";
+import mainLogo from "../assets/images/mainLogo.png";
+import { useParams } from "react-router";
+import axios from "axios";
 
 function Campfire() {
+  const { roomId } = useParams();
+
+  const [letterCount, setLetterCount] = useState();
+  const getMessageCount = async () => {
+    try {
+      const res = await axios.get(`https://api.tomatos.p-e.kr/api/rooms?roomName=${roomId}`);
+      setLetterCount(res.data.data.messageNum);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    getMessageCount();
+  });
+
+  console.log(letterCount)
+
   return (
     <MobileLayout>
       <Header>
         <span>1/10</span>
       </Header>
       <Title>
-      담배 메이트 초대해서<br/>불을 더 활활 지펴보자고
+        담배 메이트 초대해서
+        <br />
+        불을 더 활활 지펴보자고
       </Title>
 
       <ImgWrapper>
-        <img src={mainLogo} alt="걍 png"/>
+        <img src={mainLogo} alt="걍 png" />
       </ImgWrapper>
 
       <button>맞담할 사람 구함 </button>
-
     </MobileLayout>
-  )
+  );
 }
 
-export default Campfire
-
+export default Campfire;
 
 const Header = styled.header`
   margin-top: 2.5rem;
 
-  font-family: 'SangSangShinb7';
+  font-family: "SangSangShinb7";
   font-style: normal;
   font-weight: 400;
   font-size: 2rem;
@@ -39,10 +57,10 @@ const Header = styled.header`
   text-align: center;
   letter-spacing: 0.16em;
 
-  color: #4D4D49;
+  color: #4d4d49;
 
   & > span {
-    font-family: 'SangSangShinb7';
+    font-family: "SangSangShinb7";
     font-style: normal;
     font-weight: 900;
     font-size: 2rem;
@@ -51,13 +69,12 @@ const Header = styled.header`
     text-align: center;
     letter-spacing: 0.16em;
 
-    color: #4D4D49;
+    color: #4d4d49;
   }
-
-`
+`;
 
 const Title = styled.h1`
-  font-family: 'SangSangShinb7';
+  font-family: "SangSangShinb7";
   font-style: normal;
   font-weight: 400;
   font-size: 2.8rem;
@@ -66,9 +83,7 @@ const Title = styled.h1`
   text-align: center;
 
   /* black */
-  color: #4D4D49;
-`
+  color: #4d4d49;
+`;
 
-const ImgWrapper = styled.section`
-
-`
+const ImgWrapper = styled.section``;
