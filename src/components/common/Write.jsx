@@ -1,14 +1,25 @@
 import React from "react";
 import { styled } from "styled-components";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import fire from "../../assets/images/fire.png";
 import letter from "../../assets/images/letter.png";
 import MainBtn from "../common/MainBtn";
+import axios from "axios";
 
 function Write() {
-  const navigate = useNavigate();
-  const handleNavigate = () => {
-    navigate(`/9/smoke`);
+  const { roomId } = useParams();
+  const navigator = useNavigate();
+
+  const postLetter = async () => {
+    try {
+      const res = await axios.post("https://api.tomatos.p-e.kr/api/message", {
+        roomName: roomId,
+        content: "test통신",
+      });
+      navigator(`/${roomId}/smoke`);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <WriteWrapper>
@@ -25,7 +36,7 @@ function Write() {
           placeholder="종이에 너를 우울하게 하는 고민을 적어서 담배를 말아보자!"
         />
       </LetterWrapper>
-      <MainBtn onClick={handleNavigate}>담배 말기</MainBtn>
+      <MainBtn onClick={postLetter}>담배 말기</MainBtn>
     </WriteWrapper>
   );
 }
