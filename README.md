@@ -81,13 +81,24 @@
     </tr>
   	<tr align="center">
         <td>
-            룸생성 , 엔딩 <br/>
+            메인뷰 이동 <br/> Ending페이지 이동
       </td>
        <td>
-            고민내용 전송 <br/>
+            인원수에 따라 이미지 업데이트 <br/> SNS 공유하기, 링크 복사하기 
       </td>
        <td>
-            고민갯수 가져오기 , 공유하기 <br/>
+            이미지 애니메이션 <br/> 순차적으로 여러 gif 띄우기
+      </td>
+    </tr>
+      	<tr align="center">
+        <td>
+            방만들기 API(PUT) <br/>
+      </td>
+       <td>
+            참가자수 표시 API(GET) <br/>
+      </td>
+       <td>
+            고민작성 API (POST) <br/>
       </td>
     </tr>
 </table>
@@ -95,7 +106,9 @@
 <h2> 🛠 기술스택 </h2>
 
 ```
-   React.js , styled-components , axios
+   - 프론트 : React.js
+   - 스타일 : styled-components 
+   - 서버 통신 : axios
 ```
 
 
@@ -117,24 +130,19 @@ https://www.notion.so/93711f6937254a5aaa22318d00e91779
 <h2> 📁 폴더 구조 </h2>
 
 ```
-├── 📁 
-│  └── 📁 
-│	├── 
-│	├── 
-│	├── 
-│	└── 
-├── 📁
-│  ├── 📁
-│  │   └── 
-│  ├── 📁 
-│  │   └── 
-├── 📁 
-│  ├── 
-│  └── 
-├── 
-├── 
-├── 
-└── 
+├── package.json 📦 설치된 패키지를 관리하는 파일
+└── src
+		├──assets
+	  │   ├── icon
+	  │   └── images
+    ├── App.jsx ✡️ 앱의 라우팅과 글로벌 스타일 지정
+    ├── index.js
+    ├── component
+    │   ├── common 🗂 공통으로 쓰일 컴포넌트 저장
+    │   └── main 🗂 main 페이지에 쓰일 컴포넌트 저장
+    ├── pages 🗂 라우팅 시 보여질 페이지 컴포넌트 저장
+    └── styles
+        └── color.js
 ```
 
 
