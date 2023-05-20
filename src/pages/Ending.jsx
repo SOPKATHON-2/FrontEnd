@@ -1,8 +1,9 @@
 import React from 'react'
+import MobileLayout from '../components/common/MobileLayout';
 
 function Ending() {
   return (
-    <div>Ending</div>
+    <MobileLayout></MobileLayout>
   )
 }
 

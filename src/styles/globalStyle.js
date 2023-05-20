@@ -149,6 +149,11 @@ button {
     border: none;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 `;
 
 export default GlobalStyle;

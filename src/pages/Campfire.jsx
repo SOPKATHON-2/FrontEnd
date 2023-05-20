@@ -1,8 +1,8 @@
 import React from 'react'
-
+import MobileLayout from '../components/common/MobileLayout';
 function Campfire() {
   return (
-    <div>Campfire</div>
+    <MobileLayout>Campfire</MobileLayout>
   )
 }
 

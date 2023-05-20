@@ -1,11 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router";
+import MobileLayout from '../components/common/MobileLayout';
 
 function SendLetter() {
   return (
     <div>
-      SendLetter
-      <Outlet />
+      <MobileLayout>
+        <Outlet />
+      </MobileLayout>
     </div>
   );
 }
