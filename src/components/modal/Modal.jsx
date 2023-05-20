@@ -1,9 +1,29 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { styled } from 'styled-components';
 
 function Modal(props) {
     const {setModal} = props;
-    
+
+    const handleKakaoShare = () => {
+        window.Kakao.Share.sendDefault({            
+            objectType: 'text',
+            text:
+                '담타 조지실 분 구함',
+            link: {
+                webUrl: 'https://developers.kakao.com',
+            }})
+    }
+
+    useEffect(() => {
+        if (window.Kakao) {
+            if (!window.Kakao.isInitialized()) {
+                window.Kakao.init('09fae54f3630ac73bd492511b8c98397')
+            }
+        }
+    }, [])
+
+
+
     return (
         <Wrapper>
             <ModalBox>
@@ -11,7 +31,7 @@ function Modal(props) {
                 <ModalHeader>맞담할 사람 구함</ModalHeader>
                 <ModalBtnWrapper>
                     <ModalBtn> 링크 복사하기 </ModalBtn>
-                    <ModalBtn> 카카오톡에 공유 </ModalBtn>
+                    <ModalBtn onClick={handleKakaoShare}> 카카오톡에 공유 </ModalBtn>
                 </ModalBtnWrapper>
             </ModalBox>
         </Wrapper>
