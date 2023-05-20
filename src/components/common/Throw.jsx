@@ -1,14 +1,16 @@
 import React from "react";
 import { styled } from "styled-components";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import fire from "../../assets/images/fire.png";
 import smoked from "../../assets/images/smoked.png";
 import MainBtn from "../common/MainBtn";
 
 function Throw() {
+  const { roomId } = useParams();
+
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate(`/9/campfire`);
+    navigate(`/${roomId}/campfire`);
   };
   return (
     <ThrowWrapper>

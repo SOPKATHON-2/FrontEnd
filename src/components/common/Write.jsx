@@ -12,11 +12,19 @@ function Write() {
   const [click, setClick] = useState(false);
   const navigator = useNavigate();
 
-  const postLetter = async () => {
+  const [letterContent, setletterContent] = useState();
+
+  const setLetter = (e) => {
+    setletterContent(e.target.value);
+  };
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    console.log(letterContent);
+
     try {
       const res = await axios.post("https://api.tomatos.p-e.kr/api/message", {
         roomName: roomId,
-        content: "test통신",
+        content: letterContent,
       });
       setClick(true);
       navigator(`/${roomId}/smoke`);
@@ -24,6 +32,7 @@ function Write() {
       console.log(err);
     }
   };
+
   return (
     <WriteWrapper>
       <Title>고민을 말해봐</Title>
@@ -31,18 +40,21 @@ function Write() {
       <FireWrapper>
         <img src={fire} alt="불" />
       </FireWrapper>
+
       <LetterWrapper>
         <img src={letter} alt="편지지" />
         <textarea
+          name="letter"
           rows="5"
           cols="33"
           placeholder="종이에 너를 우울하게 하는 고민을 적어서 담배를 말아보자!"
+          onChange={setLetter}
         />
       </LetterWrapper>
       <RollLetter>
         <img src={roll} alt="편지-말기" />
       </RollLetter>
-      <MainBtn className={click ? "move" : ""} onClick={postLetter}>
+      <MainBtn className={click ? "move" : ""} onClick={sendMessage}>
         담배 말기
       </MainBtn>
     </WriteWrapper>
