@@ -1,9 +1,17 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect } from "react";
 import MobileLayout from "../components/common/MobileLayout";
 import { styled } from "styled-components";
-import mainLogo from "../assets/images/mainLogo.png";
+
 import { useParams } from "react-router";
 import axios from "axios";
+import React, { useState } from "react";
+
+
+import mainLogo from "../assets/images/mainLogo.png";
+import MainBtn from "../components/common/MainBtn";
+import Modal from "../components/modal/Modal";
+
+import { IMG_DATA } from "../assets/images";
 
 function Campfire() {
   const { roomId } = useParams();
@@ -21,12 +29,15 @@ function Campfire() {
     getMessageCount();
   });
 
-  console.log(letterCount)
+  console.log(letterCount);
+
+  const [isModal, setModal] = useState(false);
+  const num = 10;
 
   return (
     <MobileLayout>
       <Header>
-        <span>1/10</span>
+        <span>{letterCount}</span>/10
       </Header>
       <Title>
         담배 메이트 초대해서
@@ -35,10 +46,18 @@ function Campfire() {
       </Title>
 
       <ImgWrapper>
-        <img src={mainLogo} alt="걍 png" />
+        <img src={IMG_DATA[num - 1]} alt="걍 png" />
       </ImgWrapper>
 
-      <button>맞담할 사람 구함 </button>
+      <MainBtn
+        onClick={() => {
+          setModal(true);
+        }}
+      >
+        맞담할 사람 구함{" "}
+      </MainBtn>
+
+      {isModal ? <Modal setModal={setModal} /> : ``}
     </MobileLayout>
   );
 }
@@ -50,8 +69,7 @@ const Header = styled.header`
 
   font-family: "SangSangShinb7";
   font-style: normal;
-  font-weight: 400;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 2.6rem;
   /* identical to box height */
   text-align: center;
@@ -63,7 +81,7 @@ const Header = styled.header`
     font-family: "SangSangShinb7";
     font-style: normal;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 3rem;
     line-height: 2.6rem;
     /* identical to box height */
     text-align: center;
@@ -74,10 +92,12 @@ const Header = styled.header`
 `;
 
 const Title = styled.h1`
+  margin-top: 3rem;
+
   font-family: "SangSangShinb7";
   font-style: normal;
-  font-weight: 400;
-  font-size: 2.8rem;
+  font-size: 4.5rem;
+  font-weight: 500;
   line-height: 3.6rem;
   /* or 129% */
   text-align: center;
@@ -86,4 +106,11 @@ const Title = styled.h1`
   color: #4d4d49;
 `;
 
-const ImgWrapper = styled.section``;
+const ImgWrapper = styled.section`
+  margin: 2.8rem 0rem;
+
+  & > img {
+    width: 26rem;
+    height: 26rem;
+  }
+`;
