@@ -68,6 +68,7 @@ const Title = styled.h1`
   font-family: 'SangSangShinb7';
   font-style: normal;
   font-size: 4.5rem;
+  font-weight: 500;
   line-height: 3.6rem;
   /* or 129% */
   text-align: center;
