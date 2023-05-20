@@ -2,6 +2,7 @@ import React from "react";
 import MobileLayout from "../components/common/MobileLayout";
 import { styled } from "styled-components";
 import MainIcon from "../assets/images/main_icon.png";
+import MainBtn from "../components/common/MainBtn";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <MainImgWrapper>
         <img src={MainIcon} />
       </MainImgWrapper>
+      <MainBtn onClick={()=>console.log("hello")}>ㅇ ㅋ</MainBtn>
     </MobileLayout>
   );
 }

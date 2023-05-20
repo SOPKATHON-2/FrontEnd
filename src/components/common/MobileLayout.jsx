@@ -14,5 +14,4 @@ const MobileLayoutWrapper = styled.div`
 
   width: 32rem;
   height: 100vh;
-  border: 2px solid black;
 `;
