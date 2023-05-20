@@ -13,7 +13,7 @@ function Modal(props) {
       objectType: "text",
       text: "담타 조지실 분 구함",
       link: {
-        webUrl: "https://developers.kakao.com",
+        webUrl: "https://front-end-omega-beige.vercel.app/home",
       },
     });
   };
