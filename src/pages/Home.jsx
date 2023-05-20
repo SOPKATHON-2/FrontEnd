@@ -3,16 +3,20 @@ import MobileLayout from "../components/common/MobileLayout";
 import { styled } from "styled-components";
 import MainIcon from "../assets/images/main_icon.png";
 import MainBtn from "../components/common/MainBtn";
-import { useNavigate } from "react-router";
-
+import { useNavigate, useParams } from "react-router";
+import axios from "axios";
 
 function Home() {
-
-    const navigate = useNavigate();
-    const handleNavigate = () => {
-      navigate(`/9/write`);
-    };
-
+  const navigator = useNavigate();
+  const makeRoom = async () => {
+    try {
+      const res = await axios.post("https://api.tomatos.p-e.kr/api/rooms");
+      const roomId = res.data.data.roomName;
+      navigator(`/${roomId}/write`);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <MobileLayout>
@@ -23,7 +27,7 @@ function Home() {
       <MainImgWrapper>
         <img src={MainIcon} />
       </MainImgWrapper>
-      <MainBtn onClick={handleNavigate}>ㅇ ㅋ</MainBtn>
+      <MainBtn onClick={makeRoom}>ㅇ ㅋ</MainBtn>
     </MobileLayout>
   );
 }
