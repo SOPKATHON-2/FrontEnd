@@ -78,7 +78,7 @@ function Campfire() {
         </MainBtn>
       )}
 
-      {isModal ? <Modal setModal={setModal} /> : ``}
+      {isModal ? <Modal setModal={setModal} roomId={roomId} /> : ``}
     </MobileLayout>
   );
 }

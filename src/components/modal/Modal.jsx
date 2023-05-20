@@ -6,14 +6,14 @@ import ImgKakao from "../../assets/images/img_kakao.png";
 import ImgClose from "../../assets/images/img_close.png";
 
 function Modal(props) {
-  const { setModal } = props;
+  const { setModal , roomId } = props;
 
   const handleKakaoShare = () => {
     window.Kakao.Share.sendDefault({
       objectType: "text",
       text: "담타 조지실 분 구함",
       link: {
-        webUrl: "https://front-end-omega-beige.vercel.app/home",
+        webUrl: `https://front-end-omega-beige.vercel.app/${roomId}/write`,
       },
     });
   };
