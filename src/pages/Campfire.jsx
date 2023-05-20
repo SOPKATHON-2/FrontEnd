@@ -8,12 +8,7 @@ import Modal from '../components/modal/Modal';
 
 function Campfire() {
 
-  const [isModal,setModal] = useState(true);
-
-  const handleModal = () => {
-
-
-  }
+  const [isModal,setModal] = useState(false);
 
   return (
     <MobileLayout>
@@ -30,7 +25,7 @@ function Campfire() {
 
       <MainBtn onClick={()=>{setModal(true)}}>맞담할 사람 구함 </MainBtn>
 
-      {isModal? ``:<Modal/>}
+      {isModal? <Modal setModal={setModal}/> : ``}
 
     </MobileLayout>
   )
