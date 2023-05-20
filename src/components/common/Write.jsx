@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import fire from "../../assets/images/fire.png";
 import letter from "../../assets/images/letter.png";
+import MainBtn from "../common/MainBtn";
 
 function Write() {
   return (
@@ -20,6 +21,7 @@ function Write() {
           placeholder="종이에 너를 우울하게 하는 고민을 적어서 담배를 말아보자!"
         ></textarea>
       </LetterWrapper>
+      <MainBtn>담배 말기</MainBtn>
     </WriteWrapper>
   );
 }
