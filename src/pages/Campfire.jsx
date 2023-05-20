@@ -1,14 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 import MobileLayout from '../components/common/MobileLayout';
 import { styled } from 'styled-components';
 import mainLogo from '../assets/images/mainLogo.png'
+import MainBtn from '../components/common/MainBtn';
+import Modal from '../components/modal/Modal';
 
 
 function Campfire() {
+
+  const [isModal,setModal] = useState(true);
+
+  const handleModal = () => {
+
+
+  }
+
   return (
     <MobileLayout>
       <Header>
-        <span>1/10</span>
+        <span>1</span>/10
       </Header>
       <Title>
       담배 메이트 초대해서<br/>불을 더 활활 지펴보자고
@@ -18,7 +28,9 @@ function Campfire() {
         <img src={mainLogo} alt="걍 png"/>
       </ImgWrapper>
 
-      <button>맞담할 사람 구함 </button>
+      <MainBtn onClick={()=>{setModal(true)}}>맞담할 사람 구함 </MainBtn>
+
+      {isModal? ``:<Modal/>}
 
     </MobileLayout>
   )
@@ -32,8 +44,7 @@ const Header = styled.header`
 
   font-family: 'SangSangShinb7';
   font-style: normal;
-  font-weight: 400;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 2.6rem;
   /* identical to box height */
   text-align: center;
@@ -45,7 +56,7 @@ const Header = styled.header`
     font-family: 'SangSangShinb7';
     font-style: normal;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 3rem;
     line-height: 2.6rem;
     /* identical to box height */
     text-align: center;
@@ -57,10 +68,11 @@ const Header = styled.header`
 `
 
 const Title = styled.h1`
+  margin-top : 3rem;
+
   font-family: 'SangSangShinb7';
   font-style: normal;
-  font-weight: 400;
-  font-size: 2.8rem;
+  font-size: 4.5rem;
   line-height: 3.6rem;
   /* or 129% */
   text-align: center;
@@ -70,5 +82,11 @@ const Title = styled.h1`
 `
 
 const ImgWrapper = styled.section`
+  margin: 11.3rem 0rem;
 
+
+  & > img {
+    width: 9rem;
+    height: 9rem;
+  }
 `
