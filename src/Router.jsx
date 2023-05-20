@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import SendLetter from "./pages/SendLetter";
-import Actiongif from "./pages/ActionGif";
+import Actiongif from "./pages/Actiongif";
 import Campfire from "./pages/Campfire";
 import Ending from "./pages/Ending";
 
