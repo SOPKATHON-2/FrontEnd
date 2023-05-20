@@ -28,16 +28,12 @@ export default Campfire
 
 
 const Header = styled.header`
-  text-align: center;
 
 `
 
 const Title = styled.h1`
-  text-align: center;
 `
 
 const ImgWrapper = styled.section`
-  display:flex;
-  justify-content:center;
-  align-items:center;
+
 `
