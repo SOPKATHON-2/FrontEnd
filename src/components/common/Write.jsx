@@ -1,13 +1,15 @@
-import React from "react";
+import { React, useState } from "react";
 import { styled } from "styled-components";
 import { useNavigate, useParams } from "react-router";
 import fire from "../../assets/images/fire.png";
 import letter from "../../assets/images/letter.png";
+import roll from "../../assets/images/roll.png";
 import MainBtn from "../common/MainBtn";
 import axios from "axios";
 
 function Write() {
   const { roomId } = useParams();
+  const [click, setClick] = useState(false);
   const navigator = useNavigate();
 
   const postLetter = async () => {
@@ -16,6 +18,7 @@ function Write() {
         roomName: roomId,
         content: "test통신",
       });
+      setClick(true);
       navigator(`/${roomId}/smoke`);
     } catch (err) {
       console.log(err);
@@ -36,7 +39,12 @@ function Write() {
           placeholder="종이에 너를 우울하게 하는 고민을 적어서 담배를 말아보자!"
         />
       </LetterWrapper>
-      <MainBtn onClick={postLetter}>담배 말기</MainBtn>
+      <RollLetter>
+        <img src={roll} alt="편지-말기" />
+      </RollLetter>
+      <MainBtn className={click ? "move" : ""} onClick={postLetter}>
+        담배 말기
+      </MainBtn>
     </WriteWrapper>
   );
 }
@@ -46,6 +54,10 @@ const WriteWrapper = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+
+  .move {
+    transform: translate(100%, 0);
+  }
 `;
 
 const Title = styled.span`
@@ -103,5 +115,19 @@ const LetterWrapper = styled.div`
   }
   textarea::placeholder {
     color: #969696;
+  }
+`;
+
+const RollLetter = styled.div`
+  position: relative;
+  width: 26.2rem;
+  height: 20.8rem;
+
+  img {
+    width: 26.2rem;
+    height: 20.8rem;
+    position: absolute;
+    top: -20.8rem;
+    left: 24rem;
   }
 `;
