@@ -24,38 +24,28 @@
     <tr align="center">
         <td style="min-width: 150px;">
             <a href="">
-              <img src="" width="200" alt="깃허브계정-프로필사진">
+              <img src="" width="200" alt="정찬우 사진">
               <br />
-              <b>(깃허브계정명)</b>
+              <b>Chanwoo-Jeong</b>
             </a>
         </td>
       <td style="min-width: 150px;">
             <a href="">
               <img src="" width="200" alt="깃허브계정-프로필사진">
               <br />
-              <b>(깃허브계정명)</b>
+              <b>lydiacho</b>
             </a>
         </td>
       <td style="min-width: 150px;">
             <a href="">
               <img src="" width="200" alt="깃허브계정-프로필사진">
               <br />
-              <b>(깃허브계정명)</b>
-            </a>
-        </td>
-      <td style="min-width: 150px;">
-            <a href="">
-              <img src="" width="200" alt="깃허브계정-프로필사진">
-              <br />
-              <b>(깃허브계정명)</b>
+              <b>urjimyu</b>
             </a>
         </td>
     </tr>
     <tr align="center">
         <td>
-            (이름) <br/>
-      </td>
-       <td>
             (이름) <br/>
       </td>
        <td>
@@ -75,16 +65,14 @@
        <td>
             (서버연결) <br/>
       </td>
-       <td>
-            (서버연결) <br/>
-      </td>
+ 
     </tr>
 </table>
 
 <h2> 🛠 기술스택 </h2>
 
 ```
-   
+   React.js
 ```
 
 
@@ -97,16 +85,9 @@
 <br/>
 
 <h2>  📄 컨벤션 및 브랜치 전략 </h2>
-(노션 링크 또는 표로 작성)
+https://hushed-sundae-16d.notion.site/6dc0aaaf520c4acb90754d7a6440a7c0
 
 <a href="" />
-
-| 제목        | 내용                                                                             |
-| ----------- | -------------------------------------------------------------------------------- |
-|       |                                                |
-|       |                                                |
-|       |                                                |
-|       |                                                |
 
 <br/>
 
