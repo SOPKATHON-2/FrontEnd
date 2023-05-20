@@ -3,8 +3,17 @@ import MobileLayout from "../components/common/MobileLayout";
 import { styled } from "styled-components";
 import MainIcon from "../assets/images/main_icon.png";
 import MainBtn from "../components/common/MainBtn";
+import { useNavigate } from "react-router";
+
 
 function Home() {
+
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+      navigate(`/9/write`);
+    };
+
+
   return (
     <MobileLayout>
       <ServiceNameWrapper>
@@ -14,7 +23,7 @@ function Home() {
       <MainImgWrapper>
         <img src={MainIcon} />
       </MainImgWrapper>
-      <MainBtn onClick={()=>console.log("hello")}>ㅇ ㅋ</MainBtn>
+      <MainBtn onClick={handleNavigate}>ㅇ ㅋ</MainBtn>
     </MobileLayout>
   );
 }
