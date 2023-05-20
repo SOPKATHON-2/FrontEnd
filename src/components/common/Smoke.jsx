@@ -1,15 +1,31 @@
 import React from "react";
 import { styled } from "styled-components";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import fire from "../../assets/images/fire.png";
 import smoking from "../../assets/images/smoking.gif";
 import MainBtn from "../common/MainBtn";
+import axios from "axios";
 
 function Smoke() {
+  const { roomId } = useParams();
   const navigate = useNavigate();
   const handleNavigate = () => {
     navigate(`/9/throw`);
   };
+
+  const postLetter = async () => {
+    try {
+      const res = await axios.post("https://api.tomatos.p-e.kr/api/message", {
+        roomId,
+        content: "test통신",
+      });
+      console.log(res);
+      // navigator(`/${roomId}/write`);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <SmokeWrapper>
       <Title>같이 피실?</Title>
@@ -19,7 +35,7 @@ function Smoke() {
       <StyledImg>
         <img src={smoking} alt="불" />
       </StyledImg>
-      <MainBtn onClick={handleNavigate}>ㄱㄱ</MainBtn>
+      <MainBtn onClick={postLetter}>ㄱㄱ</MainBtn>
     </SmokeWrapper>
   );
 }
