@@ -1,11 +1,13 @@
-import Home from "./pages/Home";
+import Router from "./Router";
 import GlobalStyle from "./styles/globalStyle";
 
 function App() {
-  return <>
-  <GlobalStyle />
-  <Home />
-  </>;
+  return (
+    <>
+      <GlobalStyle />
+      <Router />
+    </>
+  );
 }
 
 export default App;
