@@ -7,8 +7,9 @@ import ImgClose from "../../assets/images/img_close.png";
 
 function Modal(props) {
   const { setModal , roomId } = props;
+  console.log(roomId)
 
-  const handleKakaoShare = () => {
+  const handleKakaoShare = (roomId) => {
     window.Kakao.Share.sendDefault({
       objectType: "text",
       text: "담타 조지실 분 구함",
@@ -44,7 +45,7 @@ function Modal(props) {
                 <img src={ImgCopylink} />
               </div>
               <div>
-                <img src={ImgKakao} onClick={handleKakaoShare} />
+                <img src={ImgKakao} onClick={()=>handleKakaoShare(roomId)} />
               </div>
             </div>
             <ModalBtn>링크 복사하기 </ModalBtn>
