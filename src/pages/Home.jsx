@@ -18,7 +18,7 @@ function Home() {
     <MobileLayout>
       <ServiceNameWrapper>
         <ServiceTitle>담타 ㄱ?</ServiceTitle>
-        <SubTitle>온라인 담타 공간</SubTitle>
+        <SubTitle>같이 고민 태우자!</SubTitle>
       </ServiceNameWrapper>
       <MainImgWrapper>
         <img src={MainIcon} />
