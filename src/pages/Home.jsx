@@ -3,7 +3,7 @@ import MobileLayout from "../components/common/MobileLayout";
 import { styled } from "styled-components";
 import MainIcon from "../assets/images/main_icon.png";
 import MainBtn from "../components/common/MainBtn";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 
 function Home() {
@@ -11,10 +11,10 @@ function Home() {
   const makeRoom = async () => {
     try {
       const res = await axios.post("https://api.tomatos.p-e.kr/api/rooms");
-      console.log(res.data);
-      navigator()
+      const roomId = res.data.data.roomName;
+      navigator(`/${roomId}/write`);
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
   };
 
