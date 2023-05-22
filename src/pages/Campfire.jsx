@@ -63,7 +63,7 @@ function Campfire() {
       {letterCount === 10 ? (
         <MainBtn
           onClick={() => {
-            navigator(`/ending`);
+            navigator(`/fired`);
           }}
         >
           불지르기{" "}
@@ -78,7 +78,7 @@ function Campfire() {
         </MainBtn>
       )}
 
-      {isModal ? <Modal setModal={setModal} /> : ``}
+      {isModal ? <Modal setModal={setModal} roomId={roomId} /> : ``}
     </MobileLayout>
   );
 }
