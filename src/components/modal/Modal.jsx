@@ -14,7 +14,7 @@ function Modal(props) {
       objectType: "text",
       text: "담타 조지실 분 구함",
       link: {
-        webUrl: `https://front-end-omega-beige.vercel.app/${roomId}/write`,
+        webUrl: `https://damtago.vercel.app/${roomId}/write`,
       },
     });
   };
